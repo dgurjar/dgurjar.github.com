@@ -1,4 +1,4 @@
-dgurjar.github.com
+dgurjar.github.io
 ==================
 
 My Website
