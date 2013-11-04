@@ -101,6 +101,13 @@ header {
   position:fixed;
 }
 
+header img{
+  margin-bottom: 10px;
+  width: 150px;
+  height: auto;
+}
+
+/*
 header ul {
   list-style:none;
   height:40px;
@@ -137,12 +144,14 @@ header ul a {
   padding-top:6px;
   height:40px;
 }
+*/
 
 strong {
   color:#222;
   font-weight:700;
 }
 
+/*
 header ul li + li {
   width:88px;
   border-left:1px solid #fff;
@@ -158,6 +167,7 @@ header ul a strong {
   display:block;
   color:#222;
 }
+*/
 
 section {
   width:500px;
@@ -194,6 +204,10 @@ footer {
     float:none;
     position:static;
     width:auto;
+  }
+
+  header img {
+    display:none;
   }
   
   header {
@@ -252,4 +266,49 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+
+.social{
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 0;
+  margin-bottom: 1em;
+}
+
+.social li{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.social li:hover{
+    opacity: 1;
+}
+
+.github{
+    background-image: url("../img/icons/github_alt.png");
+}
+
+.linkedin{
+    background-image: url("../img/icons/linkedin.png");
+}
+
+.steam{
+    background-image: url("../img/icons/steam.png");
+}
+
+p.view{
+  margin-bottom: 0px;
+}
+
+p.view:last-child{
+  margin-bottom: 20px;
+}
+
+.posts{
+  font-size: 15px;
+  list-style-type: none;
 }

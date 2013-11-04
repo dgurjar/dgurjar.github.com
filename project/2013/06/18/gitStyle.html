@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dev Gurjar</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="/img/main/me.jpg"/>
+        <h1>Dev Gurjar</h1>
+        <p>
+        <b>software developer</b><br/>
+        systems / web / ux
+        </p>
+        <ul class="social view">
+            <a href="https://github.com/dgurjar" target="_blank"><li class="github"></li></a>
+            <a href="http://www.linkedin.com/in/dgurjar" target="_blank"><li class="linkedin"></li></a>
+            <a href="http://steamcommunity.com/id/dgurjar" target="_blank"><li class="steam"></li></a>
+        </ul>
+
+        
+        <p class="view"><a href="/">Home</a></p>
+        <p class="view"><a href="/projects.html">Projects</a></p>
+
+      </header>
+      <section>
+      
+      <h2>gitStyle</h2>
+<p class="meta">18 Jun 2013</p>
+
+<div class="post">
+<table><thead><tr><th>Source</th><th>Status</th></tr></thead><tbody><tr><td style='text-align: left;'><a href='https://github.com/dgurjar/GitStyle'>https://github.com/dgurjar/GitStyle</a></td><td style='text-align: left;'>In Development</td>
+</tr></tbody></table>
+<p>This project was originally made for Golan Levin&#8217;s <a href='http://golancourses.net/2013/'>Interactive Art and Computational Design course</a> at CMU.</p>
+
+<p>Programming style is a subjective term. There are only a few generally accepted guidelines that apply to a variety of languages. The rest are all dependent on the programming language, the community, and the individual. gitStyle was created to abstract code for understanding these guidelines and to visualize the evolution of files on GitHub.</p>
+
+<p>I started off playing with the GitHub API to make sure that the project was feasible The API is still young, so it does have some restrictions. Realizing that only 60 requests could be made without authentication was a bummer, but results like the image above (retrieving code from a commit) gave me hope.</p>
+
+<p><img src='../../../../img/gitStyle/0.png' alt='alt text' /></p>
+
+<p>At this point I split my problem into two: data and visualization. I quickly coded the above visual as a simple test: given a syntax highlighter library and some code stored locally, visualize it abstractly. I liked the retro-ness and simplicity of the rectangles and stuck with them.</p>
+
+<p>My original plan was to make a desktop experience. As far as data goes, I tried very hard to use a recommended Java library. The problem was that the library wasn&#8217;t very well documented, and the examples it provided weren&#8217;t useful. I spent some of time on this, but was getting nowhere.</p>
+
+<p><img src='../../../../img/gitStyle/1.png' alt='alt text' /></p>
+
+<p>I decided to switch to JavaScript since the GitHub libraries provided seemed more promising.I also knew that there were many syntax highlighting resources in JavaScript. Using some test code, I re-did my visual portion as seen below:</p>
+
+<p><img src='../../../../img/gitStyle/4.png' alt='alt text' /></p>
+
+<p>In had generated all of the boxes using HTML divs. Although this worked will with my small test cases, when I tried visualizing a larger sample there was a noticeable lag.</p>
+
+<p><img src='../../../../img/gitStyle/2.png' alt='alt text' /></p>
+
+<p>I made a switch to canvas at one point for efficiency. I had a bunch of troubles stemming from the library I was using to access GitHub. It was very inefficient in the way it made requests. Towards the end I ditched this library almost entirely, and decided to make requests manually using JQuery and AJAX.</p>
+
+<p>At this point in the process I really solidified what information I wanted displayed in my visualization. The commit data I received had a ton of meta-data: the author, the dates, the type of syntax, etc. were all available. I decided here to look more into programmatic style and focus on these principles:</p>
+
+<ul>
+<li>Commenting</li>
+
+<li>Indentation</li>
+
+<li>General code structure</li>
+
+<li>Modularization</li>
+</ul>
+
+<p><img src='../../../../img/gitStyle/3.png' alt='alt text' /></p>
+</div>
+
+      
+      </section>
+      <footer>
+        <p><small></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
